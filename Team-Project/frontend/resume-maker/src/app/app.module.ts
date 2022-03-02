@@ -14,6 +14,9 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { HeaderComponent } from './header/header.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FooterComponent } from './footer/footer.component';
+import { SubmitResumeComponent } from './submit-resume/submit-resume.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import { FooterComponent } from './footer/footer.component';
     LoginPageComponent,
     HeaderComponent,
     HomePageComponent,
-    FooterComponent
+    FooterComponent,
+    SubmitResumeComponent,
+    ContactUsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

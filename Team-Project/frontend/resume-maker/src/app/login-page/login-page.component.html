@@ -1,1 +1,15 @@
-<p>login-page works!</p>
+<div id="login_frame">
+ 
+    <p id="image_logo"><img id = "logo_size" src="../resources/image/logo.png"></p>
+ logo
+    <form method="post">
+ 
+        <p><label class="label_input">username</label><input type="text" id="username" class="text_field"/></p>
+        <p><label class="label_input">Password</label><input type="text" id="password" class="text_field"/></p>
+ 
+        <div id="login_control">
+            <input type="button" id="btn_login" value="Login" οnclick="login();"/>
+            <a mat-raised-button color = "accent" routerLink = "register">Register</a>
+        </div>
+    </form>
+</div>
