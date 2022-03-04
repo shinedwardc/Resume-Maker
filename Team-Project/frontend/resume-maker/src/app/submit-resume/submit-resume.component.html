@@ -1,1 +1,24 @@
-<p>submit-resume works!</p>
+<div class = "box">
+    <h1 id = "submit">Submit a resume for an employer to see</h1>
+    <div class="text-center">
+        <input class="form-control" type="file"
+                (change)="onChange($event)">
+
+        <button (click)="onUpload()"
+            class="btn btn-success"
+            id = "upload">
+            Upload
+        </button>
+    </div>
+
+    <div class="container text-center jumbotron"
+        *ngIf="shortLink">
+        <h2>Preview of uploaded file</h2>
+        <a href="{{shortLink}}">{{shortLink}}</a>
+        <h2>An employer will receive the resume</h2>
+    </div>
+    
+    <div class="container" *ngIf="loading">
+        <h3>Loading ...</h3>
+    </div>
+</div>
