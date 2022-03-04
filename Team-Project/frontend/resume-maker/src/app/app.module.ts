@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SubmitResumeComponent } from './submit-resume/submit-resume.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { RegisterComponent } from './register/register.component';
+import { FileUploadService } from './submit-resume/file-upload.service';
 
 
 
@@ -39,7 +41,8 @@ import { RegisterComponent } from './register/register.component';
     MatToolbarModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
