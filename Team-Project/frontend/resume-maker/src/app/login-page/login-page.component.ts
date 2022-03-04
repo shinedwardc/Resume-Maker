@@ -14,8 +14,11 @@ export class LoginPageComponent implements OnInit {
   }
 
   login(){
-    console.log("login!!!!!!!!")
     this.router.navigate(['home'])
+  }
+
+  register(){
+    this.router.navigate(['register'])
   }
 
 }

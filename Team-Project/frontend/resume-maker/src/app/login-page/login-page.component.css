@@ -56,8 +56,9 @@ form p > * {
     border: 0;
 }
  
-#btn_login {
+.btn_ {
     font-size: 14px;
+    margin-left: 25px;
     width: 120px;
     height: 28px;
     line-height: 28px;
