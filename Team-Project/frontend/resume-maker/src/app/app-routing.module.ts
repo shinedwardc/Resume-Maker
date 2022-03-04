@@ -14,7 +14,8 @@ const routes: Routes = [
   { path : 'submit', component: SubmitResumeComponent},
   { path : 'contact', component: ContactUsComponent},
   { path : 'login', component: LoginPageComponent},
-  { path : 'register', component: RegisterComponent}
+  { path : 'register', component: RegisterComponent},
+  { path : 'submit', component: SubmitResumeComponent}
 ];
 
 @NgModule({
@@ -22,3 +23,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+exports: [ RouterModule ]

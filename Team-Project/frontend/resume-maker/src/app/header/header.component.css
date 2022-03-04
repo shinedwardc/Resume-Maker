@@ -10,6 +10,10 @@
     width: 100% 
 }
 
+a:hover{
+    color: rgb(97, 127, 172);
+}
+
 .spacer {
     flex: 1 1 auto;
 }

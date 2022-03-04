@@ -1,0 +1,35 @@
+ul {
+    border: 1px solid black;
+    list-style-type: none;
+    background-color: white;
+}
+
+li {
+    text-align: center;
+    font-size: 120%;
+    z-index: 2;
+    background-color: white;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#header {
+    margin: 25px auto 0 auto;
+    text-align: center;
+}
+
+#developers {
+    z-index: 1;
+    margin: 50px auto 0 auto;
+    width: 50%;
+    border: 3px solid #0b1535;
+    background: #132e68;
+    padding: 10px;
+}

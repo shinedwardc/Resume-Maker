@@ -1,1 +1,14 @@
-<p>contact-us works!</p>
+<div id = "header">
+    <h1>Contact Us</h1>
+</div>
+<div id = "developers">
+    <ul *ngFor = "let i of developers">
+        <li>
+            {{ i.name }}  
+        </li>
+        <li>
+            <mat-icon color = "primary">email</mat-icon>
+            <a href = "mailto:{{ i.email }}">{{ i.email }}</a>
+        </li>
+    </ul>
+</div>
