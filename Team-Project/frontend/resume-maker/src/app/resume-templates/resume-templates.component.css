@@ -2,7 +2,7 @@ h2 {
   margin: 1em;
 }
 section {
-  width: 90%;
+  width: 95%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1rem 1fr;
