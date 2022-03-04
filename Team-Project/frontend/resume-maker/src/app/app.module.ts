@@ -18,7 +18,6 @@ import { FooterComponent } from './footer/footer.component';
 import { SubmitResumeComponent } from './submit-resume/submit-resume.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { RegisterComponent } from './register/register.component';
-import { FileUploadService } from './submit-resume/file-upload.service';
 
 
 
