@@ -1,0 +1,31 @@
+h2 {
+  margin: 1em;
+}
+section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1rem 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+section > h2 {
+  text-align: center;
+  margin: 0;
+}
+
+/* imported from tachyons */
+section .hover {
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
+section .hover:hover,
+section .hover:focus {
+  transform: scale(1.05);
+}
+section .hover:active {
+  transform: scale(0.9);
+}
