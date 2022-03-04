@@ -6,11 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon'
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ResumeTemplatesComponent } from './resume-templates/resume-templates.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { HeaderComponent } from './header/header.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -18,20 +17,19 @@ import { FooterComponent } from './footer/footer.component';
 import { SubmitResumeComponent } from './submit-resume/submit-resume.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { RegisterComponent } from './register/register.component';
-
+import { ResumeTemplatesModule } from './resume-templates/resume-templates.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ResumeTemplatesComponent,
     LoginPageComponent,
     HeaderComponent,
     HomePageComponent,
     FooterComponent,
     SubmitResumeComponent,
     ContactUsComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,9 +39,10 @@ import { RegisterComponent } from './register/register.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    ResumeTemplatesModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

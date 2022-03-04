@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
-import { ResumeTemplatesComponent } from './resume-templates/resume-templates.component';
 import { SubmitResumeComponent } from './submit-resume/submit-resume.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterComponent } from './register/register.component';
+import { ResumeTemplatesComponent } from './resume-templates/resume-templates.component';
 
 const routes: Routes = [
   { path : '', redirectTo: '/home', pathMatch: 'full'},
@@ -20,7 +20,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
-exports: [ RouterModule ]
+export class AppRoutingModule {}
