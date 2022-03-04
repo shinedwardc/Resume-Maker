@@ -1,11 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Literata:ital@0;1&display=swap");
+
 article {
   padding: 2rem;
-  margin: 2rem;
+  margin: 1rem;
   background: white;
 }
 
 article * {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif !important;
+  font-family: "Literata";
 }
 
 hr {
