@@ -1,0 +1,67 @@
+<article id = "crisp" class="container">
+    <h1 class="f4">{{user?.name}}</h1>
+    <h4>{{user?.major ?? 'Insert major'}}</h4>
+    <!-- <h2 class="f5">Position</h2> -->
+    <p>Experience</p>
+    <hr>
+    <div class="parent">
+        <div class="div1"> 
+            <h3><mat-icon> person_pin</mat-icon>Personal Info</h3>
+            <hr>
+            <h4>Address</h4>
+            <p>{{user?.location}}</p>
+            <h4>Phone</h4>
+            <p>{{user?.phone}}</p>
+            <h4>Email</h4>
+            <p>{{user?.email}}</p>
+        </div>
+        <div class="div2"> 
+            <h3><mat-icon>extension</mat-icon>Skills</h3>
+            <hr>
+            <ul *ngFor = "let user of user?.skills">
+                <li>{{user ?? 'Insert skills'}}</li>
+            </ul>
+        </div>
+        <div class="div3"> 
+            <h3><mat-icon>desktop_mac</mat-icon>Software</h3>
+            <hr>
+        </div>
+        <div class="div4"> 
+            <h3><mat-icon>language</mat-icon>Languages</h3>
+            <hr>
+        </div>
+        <div class="div5"> 
+            <h3><mat-icon>assignment_turned_in</mat-icon>Experience</h3>
+            <hr>
+            <div id = "container" *ngFor = "let i of user?.experience">
+                <div id = "time">
+                    <!--<h4>{{user?.experienceTime ?? '20xx-20xx'}}</h4>-->
+                    <h4>{{ i?.startDate }}</h4>
+                </div>
+                <div id = "description">
+                    <!---<h4>{{user?.experienceTitle ?? 'Position'}}</h4>--->
+                    <p>{{ i?.description ?? 'Description placeholder'}}</p>
+                </div>
+                <!--<div id = "time">
+                    <h4>20xx-20xx</h4>
+                </div>
+                <div id = "description">
+                    <h4>Position</h4>
+                    <p>Description placeholder</p>
+                </div>-->
+            </div>
+        </div>
+        <div class="div6"> 
+            <h3><mat-icon>school</mat-icon>Education</h3>
+            <hr>
+            <ul>
+                <li>{{user?.school ?? 'Insert school'}}</li>
+            </ul>
+        </div>
+        <div class="div7"> 
+            <h3><mat-icon>workspace_premium</mat-icon>Certifications</h3>
+            <hr>
+        </div>
+    </div>
+</article>
+  

@@ -1,0 +1,12 @@
+{
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "files": ["user.ts"],
+  "compilerOptions": {
+    "outDir": ".",
+    "declaration": true,
+    "declarationMap": true,
+    "module": "ES2020",
+    "moduleResolution": "Node",
+    "strict": true
+  }
+}

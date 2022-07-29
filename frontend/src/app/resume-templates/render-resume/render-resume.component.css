@@ -1,0 +1,32 @@
+
+body {
+  height: 2330px;
+}
+
+#res-container > * {
+  min-height: 11in;
+  min-width: 8.5in;
+  margin:0px 0px 0px 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  display: block;
+}
+
+@media print {
+
+  .hideprint {
+    display: none !important;
+  }
+  @page {
+    /* height: 3300px; */
+    width: 2550px;
+    margin: 2cm;
+ }
+}
+
+/* .print-page {
+  background-color: aliceblue;
+  height: 3300px;
+  width: 2550px;
+} */
+

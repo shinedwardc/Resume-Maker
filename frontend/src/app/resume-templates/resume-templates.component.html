@@ -1,0 +1,32 @@
+<h2>Choose a template to download:</h2>
+<section>
+  <h2>Clean</h2>
+  <h2>Serif</h2>
+  <h2>Classic</h2>
+  <!---<app-clean class="hover"></app-clean>
+  <app-serif class="hover"></app-serif>
+  <app-classic class="hover"></app-classic>--->
+  <img class = "hover" width = "500" src="../../assets/image/template1.png">
+  <img class = "hover" width = "500" src="../../assets/image/template2.png">
+  <img class = "hover" width = "500" src="../../assets/image/template3.png">
+  <a mat-stroked-button color = "primary" [routerLink]="['/render']" [queryParams]="{'template' : 'clean'}">Clean</a>
+  <a mat-stroked-button color = "primary" [routerLink]="['/render']" [queryParams]="{'template' : 'serif'}">Serif</a>
+  <a mat-stroked-button color = "primary"[routerLink]="['/render']" [queryParams]="{'template' : 'classic'}">Classic</a>
+  <h2>Cubic</h2>
+  <h2>Crisp</h2>
+  <h2>Simple/Traditional</h2>
+  <img class="hover" width = "500" height = "715" src="../../assets/image/template4.png">
+  <img class="hover" width = "500" src="../../assets/image/template5.png">
+  <img class="hover" width = "500" height = "715" src="../../assets/image/template6.png">
+  <a mat-stroked-button color = "primary" [routerLink]="['/render']" [queryParams]="{'template': 'cubic'}">Cubic</a>
+  <a mat-stroked-button color = "primary" [routerLink]="['/render']" [queryParams]="{'template': 'crisp'}">Crisp</a>
+  <a mat-stroked-button color = "primary" [routerLink]="['/render']" [queryParams]="{'template': 'simple'}">Simple</a>
+  <h2>Design</h2>
+  <h2></h2>
+  <h2></h2>
+  <img class="hover" width = "500" src="../../assets/image/template7.png">
+  <img class="hover" width = "500">
+  <img class="hover" width = "500">
+  <a mat-stroked-button color = "primary" [routerLink]="['/render']" [queryParams]="{'template': 'design'}">Design</a>
+
+</section>

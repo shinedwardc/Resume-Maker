@@ -1,0 +1,16 @@
+<div class="hideprint container my-4">
+  To save your resume, please open the print dialog and press "Save as PDF" in the printer list.
+  <button mat-raised-button color="primary" onclick="window.print()">Print</button>
+</div>
+<div class="container my-4" id="res-container" [ngSwitch]="route.snapshot.queryParams['template']">
+  <app-classic [user]="user" *ngSwitchCase="'classic'"></app-classic>
+  <app-clean [user]="user" *ngSwitchCase="'clean'"></app-clean>
+  <app-crisp [user]="user" *ngSwitchCase="'crisp'"></app-crisp>
+  <app-cubic [user]="user" *ngSwitchCase="'cubic'"></app-cubic>
+  <app-serif [user]="user" *ngSwitchCase="'serif'"></app-serif>
+  <app-simple [user]="user" *ngSwitchCase="'simple'"></app-simple>
+  <app-design [user]="user" *ngSwitchCase="'design'"></app-design>
+  <div *ngSwitchDefault class="alert alert-danger" role="alert">
+    Template not found
+  </div>
+</div>

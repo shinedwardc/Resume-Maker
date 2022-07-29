@@ -1,0 +1,37 @@
+{
+  "name": "backend",
+  "type": "module",
+  "dependencies": {
+    "body-parser": "^2.0.0-beta.1",
+    "dotenv": "^16.0.0",
+    "express": "^5.0.0-beta.1",
+    "firebase-admin": "^10.1.0",
+    "frontend": "0.0.1",
+    "mongodb": "^4.5.0",
+    "morgan": "^1.10.0",
+    "shared": "0.0.1",
+    "superstruct": "^0.15.4"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "npm run build && concurrently \"tsc -w\" \"nodemon -e js --use-strict -- dist/server.js\"",
+    "start": "npm run build && node --use-strict dist/server.js",
+    "lint": "eslint --fix --ext ts \"src/**/*.ts\""
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.2",
+    "@types/express": "^4.17.13",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "~16",
+    "@typescript-eslint/eslint-plugin": "^5.20",
+    "@typescript-eslint/parser": "^5.20",
+    "concurrently": "^7.1.0",
+    "eslint": "^8.14",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6",
+    "typescript": "^4.6"
+  },
+  "packageManager": "pnpm@7.0.0-rc.8"
+}

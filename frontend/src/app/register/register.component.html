@@ -1,0 +1,125 @@
+<ng-container *ngIf="route.paramMap | async as data">
+  <div *ngIf="data.get('notice')" class="alert alert-success" role="alert">
+    {{ data.get('notice') }}
+  </div>
+</ng-container>
+<ng-template>
+  <mat-form-field>
+    <mat-form-field [hidden]="curr !== 'experienceTime'">
+      <mat-label>Work Experience Time</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="experienceTime">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field [hidden]="curr !== 'experienceTitle'">
+      <mat-label>Work Experience Title</mat-label><input formControlName="experienceTitle" matInput>
+    </mat-form-field>
+    <mat-form-field [hidden]="curr !== 'experience'">
+      <mat-label>Work Experience Description</mat-label><textarea formControlName="skills" matInput cdkTextareaAutosize
+        cdkAutosizeMinRows="2"></textarea>
+    </mat-form-field>
+  </mat-form-field>
+</ng-template>
+<div id="register_frame">
+  <p id="logo"><img id="logo_size" src="../../assets/image/logo.png"></p>
+  <form [formGroup]="profileForm" onsubmit="(e)=>{e.preventDefault();return false;}">
+    <mat-form-field [hidden]="curr !== 'name'">
+      <mat-label>Full Name</mat-label><input formControlName="name" matInput>
+    </mat-form-field>
+    <mat-form-field [hidden]="curr !== 'bio'">
+      <mat-label>Self Description</mat-label><input formControlName="bio" matInput>
+    </mat-form-field>
+    <mat-form-field [hidden]="curr !== 'email'">
+      <mat-label>Email</mat-label><input formControlName="email" matInput>
+    </mat-form-field>
+    <mat-form-field [hidden]="curr !== 'phone'">
+      <mat-label>Phone</mat-label><input formControlName="phone" matInput>
+    </mat-form-field>
+    <mat-form-field [hidden]="curr !== 'location'">
+      <mat-label>Address</mat-label><textarea formControlName="location" matInput cdkTextareaAutosize
+        cdkAutosizeMinRows="2"></textarea>
+    </mat-form-field>
+    <mat-form-field [hidden]="curr !== 'homepage'">
+      <mat-label>Homepage</mat-label><input formControlName="homepage" matInput>
+    </mat-form-field>
+    <div [hidden]="curr !== 'language'" formArrayName="language">
+      <div *ngFor="let language of language.controls; index as i; count as count" class="multiple">
+        <mat-form-field>
+          <mat-label>Language</mat-label><input [formControlName]="i" matInput>
+        </mat-form-field>
+        <button *ngIf="count > 1" mat-icon-button aria-label="Remove this language" (click)="removeLanguage(i)">
+          <mat-icon>remove</mat-icon>
+        </button>
+
+      </div>
+      <button mat-raised-button color="primary" (click)="addLanguage()">
+        Add language
+      </button>
+    </div>
+    <div [hidden]="curr !== 'skills'" formArrayName="skills">
+      <div *ngFor="let skill of skills.controls; index as i; count as count" class="multiple">
+        <mat-form-field>
+          <mat-label>Skill</mat-label><input [formControlName]="i" matInput>
+        </mat-form-field>
+        <button *ngIf="count > 1" mat-icon-button aria-label="Add this skill" (click)="removeSkill(i)">
+          <mat-icon>remove</mat-icon>
+        </button>
+
+      </div>
+      <button mat-raised-button color="primary" (click)="addSkill()">
+        Add skill
+      </button>
+    </div>
+    <div [hidden]="curr !== 'experience'" formArrayName="experience" id="experiences">
+      <div *ngFor="let experience of experience.controls; index as i; count as count" [formGroupName]="i"
+        class="rounded p-3 my-3 bg-body">
+        <mat-form-field hideRequiredMarker="true">
+          <mat-label>Company</mat-label><input formControlName="company" matInput>
+        </mat-form-field>
+        <mat-form-field hideRequiredMarker="true" class="mx-1">
+          <mat-label>Position</mat-label><input formControlName="position" matInput>
+        </mat-form-field>
+        <mat-form-field hideRequiredMarker="true">
+          <mat-label>Description</mat-label><textarea formControlName="description" matInput cdkTextareaAutosize
+            cdkAutosizeMinRows="2"></textarea>
+        </mat-form-field>
+        <div>
+          <mat-form-field hideRequiredMarker="true">
+            <mat-label>Start Date</mat-label><input matInput [matDatepicker]="startpicker" formControlName="startDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="startpicker"></mat-datepicker-toggle>
+            <mat-datepicker #startpicker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field hideRequiredMarker="true">
+            <mat-label>End Date</mat-label><input matInput [matDatepicker]="endpicker" formControlName="endDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="endpicker"></mat-datepicker-toggle>
+            <mat-datepicker #endpicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <button *ngIf="count >= 1" mat-stroked-button (click)="removeExperience(i)">
+          Remove
+        </button>
+      </div>
+      <button mat-raised-button color="primary" (click)="addExperience()">
+        Add experience
+      </button>
+    </div>
+    <mat-form-field [hidden]="curr !== 'title'">
+      <mat-label>Professional Title</mat-label><input formControlName="title" matInput>
+    </mat-form-field>
+    <mat-form-field [hidden]="curr !== 'school'">
+      <mat-label>School</mat-label><input formControlName="school" matInput>
+    </mat-form-field>
+    <mat-form-field [hidden]="curr !== 'major'">
+      <mat-label>Major</mat-label><input formControlName="major" matInput>
+    </mat-form-field>
+    <br />
+    <button mat-raised-button color="secondary" [disabled]="index <= 0" (click)="prev()">Back</button>
+    <button *ngIf="!submittable" mat-raised-button color="primary" [disabled]="profileForm.status !== 'VALID'"
+      (click)="next()">Next</button>
+    <button *ngIf="submittable" mat-raised-button color="primary" [disabled]="profileForm.status !== 'VALID'"
+      (click)="submit()">Submit</button>
+  </form>
+</div>

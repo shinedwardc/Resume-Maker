@@ -1,0 +1,61 @@
+<article id = "crisp" class="container">
+    <header>
+        <h1>{{user?.name ?? 'Insert name'}}</h1>
+        <h4>{{user?.major ?? 'Insert major'}}</h4>
+        <p>{{user?.bio ?? 'Insert bio'}}</p>
+    </header>
+    <div class = "parent">
+        <section class = "div1">
+            <h3>Personal Info</h3>
+            <hr>
+            {{user?.email}}
+            <!--TODO: someone finish this-->
+        </section>
+        <section class="div2"> 
+            <h3>Skills</h3>
+            <hr>
+            <ul>
+                <li>{{user?.skills ?? 'Insert skills'}}</li>
+            </ul>
+        </section>
+        <section class="div3"> 
+            <h3>Position</h3>
+            <hr>
+            <p>{{user?.title ?? 'Insert your "title"'}}</p>
+        </section>
+        <section class="div4"> 
+            <p>Brief description summary</p>
+        </section>
+        <section class="div5"> 
+            <h3>Experience</h3>
+            <hr>
+            <div id = "container" *ngFor = "let i of user?.experience">
+                <div id = "time">
+                    <!--<h4>{{user?.experienceTime ?? '20xx-20xx'}}</h4>-->
+                    <h4>{{ i?.startDate ?? 'date'}}</h4>
+                </div>
+                <div id = "company">
+                    <h4>{{ i?.company ?? 'company name'}}</h4>
+                </div>
+                <div id = "position">
+                    <h5>{{ i?.position ?? 'job position'}}</h5>
+                </div>
+                <div id = "description">
+                    <!--<h4>{{user?.experienceTitle ?? 'Position'}}</h4>-->
+                    <p>{{i?.description ?? 'Description placeholder'}}</p>
+                </div>
+                <!---<div id = "time">
+                    <h4>20xx-20xx</h4>
+                </div>
+                <div id = "description">
+                    <h4>Position</h4>
+                    <p>Description placeholder</p>
+                </div>--->
+            </div>
+        </section>
+        <!--<section class="div6"> 
+            <p>Experience</p>
+        </section>-->
+    </div>
+</article>
+  

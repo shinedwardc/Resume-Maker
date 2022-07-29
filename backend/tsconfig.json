@@ -1,0 +1,16 @@
+{
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "ES2020",
+    "moduleResolution": "Node",
+    "strict": true,
+    "assumeChangesOnlyAffectDirectDependencies": true,
+    "preserveWatchOutput": true
+  },
+  "watchOptions": {
+    "watchFile": "useFsEvents",
+    "watchDirectory": "useFsEvents"
+  }
+}

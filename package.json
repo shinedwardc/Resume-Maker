@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "shared"
+  ],
+  "devDependencies": {
+    "concurrently": "^7.1.0"
+  },
+  "scripts": {
+    "build": "concurrently -n backend,frontend -c cyan,blue --kill-others-on-fail \"pnpm -C backend run build\" \"pnpm -C frontend run build\"",
+    "watch": "concurrently -n backend,frontend -c cyan,blue -k \"pnpm -C backend run watch\" \"pnpm -C frontend run watch\"",
+    "start": "concurrently -n backend,frontend -c cyan,blue --kill-others-on-fail \"pnpm -C backend run start\" \"pnpm -C frontend run build\""
+  },
+  "packageManager": "pnpm@7.0.0-rc.8"
+}

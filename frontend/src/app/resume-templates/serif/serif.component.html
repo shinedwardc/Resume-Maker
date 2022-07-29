@@ -1,0 +1,36 @@
+<article class="container">
+  <img height="50" src="/assets/image/placehold.png">
+  <h1 class="f4">{{user?.name ?? 'User'}}'s resume</h1>
+  <h2 class="f5">{{user?.phone ?? '+1 (123) 456-7890'}}</h2>
+  <h3>{{user?.email ?? 'usersxxx@gmail.com'}}</h3>
+  <h4>{{user?.major ?? 'Insert major'}}</h4>
+  <p>{{user?.bio ?? 'Insert bio'}}</p>
+  <hr>
+  <h4>Skills</h4>
+  <ul>
+    <li>{{user?.skills ?? 'Insert skills'}}</li>
+  </ul>
+  <h4>Education</h4>
+  <ul>
+    <li>{{user?.school ?? 'School'}} <span class="year">20xx-20xx</span></li>
+  </ul>
+  <h4>Experience</h4>
+  <hr>
+  <div id = "description" *ngFor = "let i of user?.experience">
+    <div id = "time">
+        <!--<h4>{{user?.experienceTime ?? '20xx-20xx'}}</h4>-->
+        <h4>{{ i?.startDate ?? 'date'}}</h4>
+    </div>
+    <div id = "company">
+        <h4>{{ i?.company ?? 'company name'}}</h4>
+    </div>
+    <div id = "position">
+        <h5>{{ i?.position ?? 'job position'}}</h5>
+    </div>
+    <div id = "description">
+        <!--<h4>{{user?.experienceTitle ?? 'Position'}}</h4>-->
+        <p>{{i?.description ?? 'Description placeholder'}}</p>
+    </div>
+    <hr>
+  </div>  
+</article>

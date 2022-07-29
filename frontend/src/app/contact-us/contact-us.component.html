@@ -1,0 +1,47 @@
+<div id = "header">
+    <h1>Contact Us</h1>
+</div>
+<div id = "developers">
+    <ul *ngFor = "let i of developers">
+        <li>
+            {{ i.name }}  
+        </li>
+        <li>
+            <mat-icon color = "primary">email</mat-icon>
+            <a href = "mailto:{{ i.email }}">{{ i.email }}</a>
+        </li>
+    </ul>
+</div>
+
+<!-- Default form contact -->
+<div class = "contact-us">
+  <form class="text-center border border-light p-5" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <p class="h4 mb-4">Send a message</p>
+      <!-- Name -->
+      <input type="text" formControlName="contactFormName" id="defaultContactFormName" mdbInput
+        class="form-control mb-4" placeholder="Name">
+      <!-- Email -->
+      <input type="email" formControlName="contactFormEmail" id="defaultContactFormEmail" mdbInput
+        class="form-control mb-4" placeholder="E-mail">
+      <!-- Subject -->
+      <label>Subject  </label>
+      <div id = "select">
+        <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+          <option value="" disabled>Choose option</option>
+          <option value="1" selected>Feedback</option>
+          <option value="2">Report a bug</option>
+          <option value="3">Feature request</option>
+          <option value="4">Feature request</option>
+        </select>
+      </div>
+      <!-- Message -->
+      <div class="form-group">
+        <textarea formControlName="contactFormMessage" class="form-control rounded-0" mdbInput id="exampleFormControlTextarea2"
+          rows="3" placeholder="Message"></textarea>
+      </div>
+      <!-- Send button -->
+      <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect"
+        mdbWavesEffect type="submit">Send</button>
+    </form>
+  </div>
+  <!-- Default form contact -->

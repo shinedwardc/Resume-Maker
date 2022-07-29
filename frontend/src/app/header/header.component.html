@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" class="mat-elevation-z8" id="fixed-header">
+  <span>
+    <mat-icon>article</mat-icon> Resume Maker
+  </span>
+  <div class="spacer"></div>
+  <a mat-button routerLink="">Home</a>
+  <a mat-button routerLink="templates">Templates</a>
+  <a mat-button routerLink="contact">Contact Us</a>
+  <a mat-button routerLink="register">Register</a>
+  <a *ngIf="!loggedIn; else logout" mat-raised-button color="accent" routerLink="login">Log In</a>
+  <ng-template #logout><a mat-raised-button color="accent" (click)="this.user.logout()">Log Out</a></ng-template>
+</mat-toolbar>

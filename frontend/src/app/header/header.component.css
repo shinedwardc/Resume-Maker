@@ -1,0 +1,25 @@
+.title {
+    text-align: center;
+}
+
+#fixed-heder {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%
+}
+
+a:hover{
+    color: rgb(97, 127, 172);
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+@media print {
+  :host {
+    display: none
+  }
+}

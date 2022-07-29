@@ -1,0 +1,49 @@
+<article id="simple" class="container">
+    <header>
+        <h1>{{user?.name}}</h1>
+        <div id = "info">
+            <p>{{user?.location}}</p>
+            <p>{{user?.email}}</p>
+        </div>
+    </header>
+    <div class = "parent">
+        <section class = "div1">
+            <h2>Objective</h2>
+            <hr>
+            <p>{{ user?.bio ?? '[Insert bio]' }}</p>
+        </section>
+        <section class="div2"> 
+            <h2>Education</h2>
+            <hr>
+            <ul>
+                <li>{{user?.school ?? '[School name]'}}</li>
+                <li>[Date of graduation]</li>
+                <li>{{user?.major ?? '[Major]'}}</li>
+                <li>[Relevant coursework, awards, honors]</li>
+            </ul>
+        </section>
+        <h2>Experience</h2>
+        <div id = "description" *ngFor = "let i of user?.experience">
+            <div id = "time">
+                <!--<h4>{{user?.experienceTime ?? '20xx-20xx'}}</h4>-->
+                <h4>{{ i?.startDate ?? 'date'}}</h4>
+            </div>
+            <div id = "company">
+                <h4>{{ i?.company ?? 'company name'}}</h4>
+            </div>
+            <div id = "position">
+                <h5>{{ i?.position ?? 'job position'}}</h5>
+            </div>
+            <div id = "description">
+                <!--<h4>{{user?.experienceTitle ?? 'Position'}}</h4>-->
+                <p>{{i?.description ?? 'Description placeholder'}}</p>
+            </div>
+            
+        </div>
+        <section class="div5">
+            <h2>Awards & Achievements</h2>
+            <p>Brief description</p>
+        </section>
+    </div>
+</article>
+  

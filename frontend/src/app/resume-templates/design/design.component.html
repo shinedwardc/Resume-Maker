@@ -1,0 +1,84 @@
+<body>
+    <div class="container">
+        <div class="leftSide">
+           <div class="profile">
+               <img src="../../../assets/image/placehold.png" alt="personal pic">
+               <h2>{{user?.name ?? 'User'}} <br></h2>
+           </div>
+
+           <div class="contactInfo">
+               <h3 class="title">Contact information</h3>
+               <ul>
+                   <li>
+                    <span class="material-icons">phone</span>
+                    <span class="text">{{user?.phone ?? '+1 (123) 456-7890'}}</span>
+                   </li>
+                   <li>
+                    <span class="material-icons">email</span>
+                    <span class="text">{{user?.email ?? 'usersxxx@gmail.com'}}</span>
+                   </li>
+                   <li>
+                    <span class="material-icons">Website</span>
+                    <a>
+                        <span class="text">{{user?.homepage ?? 'Insert personal website'}}</span>
+                    </a>
+                   </li>
+                   <li>
+                    <span class="material-icons">location</span>
+                    <span class="text">address</span>
+                   </li>
+               </ul>
+           </div>
+
+           <div class="contactInfo education">
+               <h3 class="title">Education</h3>
+                 <ul>
+                     <li>
+                         <h5>20xx-20xx</h5>
+                         <h4>{{user?.school ?? 'School'}} </h4>
+                         <span class="text">{{user?.major ?? 'Insert major'}}</span>
+                     </li>
+                 </ul>
+           </div>
+
+           <div class="contactInfo language">
+                <h3 class="title">Language</h3>
+                <ul>
+                    <li> <span class="text">{{user?.language ?? 'Insert language'}}</span> </li>
+                </ul>
+           </div>
+
+        </div>
+
+        <div class="rightSide">
+            <div class="about">
+                <h2 class="title2">Personal description</h2>
+                <p>{{user?.bio ?? 'Insert bio'}}</p>
+            </div>
+
+            <div class="about" *ngFor = "let i of user?.experience">
+                <h2 class="title2">Experience</h2>
+                <div class="box">
+                    <div class="year-company">
+                        <h5>{{ i?.startDate ?? 'date'}}</h5>
+                        <h5>{{ i?.company ?? 'company name'}}</h5>
+                    </div>
+
+                    <div class="text">
+                        <h4>{{ i?.position ?? 'job position'}}</h4>
+                        <p>{{i?.description ?? 'Description placeholder'}}</p>
+                    </div>
+                </div>
+            </div>
+
+
+           <div class="about skills">
+                <h2 class="title2">Skill</h2>
+                 <div class="box">
+                    <h4>{{user?.skills ?? 'Insert skills'}}</h4>
+                 </div>
+           </div>
+
+        </div>
+    </div>
+</body>
